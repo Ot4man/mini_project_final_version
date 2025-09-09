@@ -1,12 +1,13 @@
   #include<stdio.h>
+  #include<stdlib.h>
   #include "library.h"
   
 
   
-  int main()
+int main()
 {
     int choix;
-    do
+    do 
     {
 
         printf("######################################################################\n");
@@ -26,14 +27,17 @@
         printf("|____________________________________________________________________|\n");
         printf("| [5] Supprimer un livre                                             |\n");
         printf("|____________________________________________________________________|\n");
-        printf("| [6] Afficher la quantite                                           |\n");
+        printf("| [6] Afficher Stock                                                 |\n");
         printf("|____________________________________________________________________|\n");
-        printf("| [7] Quitter                                                        |\n");
+        printf("| [7] Trier                                                          |\n");
+        printf("|____________________________________________________________________|\n");
+        printf("| [8] Quitter                                                        |\n");
         printf("+____________________________________________________________________+\n");
 
         printf("Votre choix: ");
 
         scanf("%d", &choix);
+        while (getchar() != '\n');
 
         switch (choix)
 
@@ -47,7 +51,8 @@
             break;
 
         case 3:
-            Recherche();
+           FULL_RECHERCHE();
+            
             break;
         case 4:
             Mise_en_quantite();
@@ -60,11 +65,21 @@
         case 6:
             Afficher_stock();
             break;
-        case 7:
-            printf(" Exit \n");
+        
+        case 7: 
+            TRIER_STOCK();
+            break;
+
+        case 8 :
+             printf(" Exit \n");
+              break;
 
         default:
             printf("Votre choix est invalide  repet \n");
+            
         }
-    } while (choix != 7);
+        
+    
+    } while (choix!=8);
+    
 }
